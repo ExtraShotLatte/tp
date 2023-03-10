@@ -48,6 +48,10 @@ public class Event {
         return address;
     }
 
+    public Contact getContact() {
+        return contact;
+    }
+
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
@@ -111,7 +115,9 @@ public class Event {
                 .append("; Rate: ")
                 .append(getRate())
                 .append("; Address: ")
-                .append(getAddress());
+                .append(getAddress())
+                .append("; Contact: ")
+                .append(getContact());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
