@@ -113,4 +113,6 @@ public interface Model {
     void updateFilteredPersonList(Predicate<Event> predicate);
 
     void updateFilteredContactList(Predicate<Contact> contact);
+
+    void linkContact(Event event, Contact contact);
 }

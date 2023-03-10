@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import seedu.address.model.contact.Contact;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -18,6 +19,7 @@ public class Event {
     // Identity fields
     private final Name name;
     private final Rate rate;
+    private Contact contact;
 
     // Data fields
     private final Address address;
@@ -68,6 +70,14 @@ public class Event {
     }
 
     /**
+     * Returns nothing for linking a contact to an event.
+     * @param contact contact to be added in year book
+     */
+    public void linkContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    /**
      * Returns true if both events have the same identity and data fields.
      * This defines a stronger notion of equality between two events.
      */
@@ -110,5 +120,6 @@ public class Event {
         }
         return builder.toString();
     }
+
 
 }

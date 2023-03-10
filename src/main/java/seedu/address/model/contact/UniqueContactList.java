@@ -3,6 +3,7 @@ package seedu.address.model.contact;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -28,6 +29,10 @@ public class UniqueContactList implements Iterable<Contact> {
     private final ObservableList<Contact> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
+    public static HashMap<String, Integer> contactMap = new HashMap<>();
+
+    public static int count = 0;
+
     /**
      * Returns true if the list contains an equivalent Contact as the given argument.
      */
@@ -46,6 +51,8 @@ public class UniqueContactList implements Iterable<Contact> {
             throw new DuplicateContactException();
         }
         internalList.add(toAdd);
+        contactMap.put(toAdd.getPhone().value, count);
+        count++;
     }
 
     /**
@@ -77,6 +84,8 @@ public class UniqueContactList implements Iterable<Contact> {
         if (!internalList.remove(toRemove)) {
             throw new ContactNotFoundException();
         }
+        contactMap.remove(toRemove.getPhone().value);
+        //not sure if need count --
     }
 
     public void setContacts(seedu.address.model.contact.UniqueContactList replacement) {
