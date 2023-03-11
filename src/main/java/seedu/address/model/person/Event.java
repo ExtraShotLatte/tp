@@ -52,8 +52,9 @@ public class Event {
         return contact;
     }
 
+    //if contact is already null u cannot check for the isnull method!
     public String getContactString() {
-        return contact.isNull()
+        return contact == null || contact.isNull()
                 ? " "
                 : contact.getName().fullName + " " + getContact().getPhone().value;
     }
