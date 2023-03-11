@@ -52,6 +52,12 @@ public class Event {
         return contact;
     }
 
+    public String getContactString() {
+        return contact.isNull()
+                ? " "
+                : contact.getName().fullName + " " + getContact().getPhone().value;
+    }
+
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.

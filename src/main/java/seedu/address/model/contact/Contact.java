@@ -42,6 +42,16 @@ public class Contact {
                 && otherContact.getName().equals(getName());
     }
 
+    //TODO Change this method to not use try catch as flow
+    public boolean isNull() {
+        try {
+            String name = this.getName().fullName;
+            return false;
+        } catch (NullPointerException npe) {
+            return true;
+        }
+    }
+
     /**
      * Returns true if both persons have the same identity and data fields.
      * This defines a stronger notion of equality between two persons.
