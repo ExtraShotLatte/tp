@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.contact.Contact;
+import seedu.address.model.contact.ContactName;
+import seedu.address.model.contact.ContactPhone;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Event;
 import seedu.address.model.person.Name;
@@ -94,6 +97,16 @@ class JsonAdaptedPerson {
         final Address modelAddress = new Address(address);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
+
+        if (!contact.equals(" ")) {
+            String[] args = contact.split(" ");
+            Contact contact = new Contact(new ContactName(args[0].trim()), new ContactPhone(args[1].trim()));
+            event.linkContact(contact);
+        }
+
+        Event e = new Event(modelName, modelRate, modelAddress, modelTags);
+        e.linkContact();
+
         return new Event(modelName, modelRate, modelAddress, modelTags);
     }
 

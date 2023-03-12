@@ -4,6 +4,9 @@ package seedu.address.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
+import seedu.address.model.contact.Contact;
+import seedu.address.model.contact.ContactName;
+import seedu.address.model.contact.ContactPhone;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Event;
 import seedu.address.model.person.Name;
@@ -18,12 +21,15 @@ public class PersonBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_RATE = "85355255";
+    public static final String DEFAULT_CONTACTNAME = "Amy";
+    public static final String DEFAULT_CONTACTNUM = "91234567";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
 
     private Name name;
     private Rate rate;
     private Address address;
+    private Contact contact;
     private Set<Tag> tags;
 
     /**
@@ -34,6 +40,7 @@ public class PersonBuilder {
         rate = new Rate(DEFAULT_RATE);
         address = new Address(DEFAULT_ADDRESS);
         tags = new HashSet<>();
+        contact = new Contact(new ContactName(DEFAULT_CONTACTNAME), new ContactPhone(DEFAULT_CONTACTNUM));
     }
 
     /**
@@ -44,6 +51,7 @@ public class PersonBuilder {
         rate = personToCopy.getRate();
         address = personToCopy.getAddress();
         tags = new HashSet<>(personToCopy.getTags());
+        contact = new Contact(new ContactName(DEFAULT_CONTACTNAME), new ContactPhone(DEFAULT_CONTACTNUM));
     }
 
     /**
@@ -78,8 +86,19 @@ public class PersonBuilder {
         return this;
     }
 
-    public Event build() {
-        return new Event(name, rate, address, tags);
+    /**
+     * Sets the {@code Contact} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withContact(String name, String number) {
+        this.contact = new Contact(new ContactName(name), new ContactPhone(number));
+        return this;
     }
 
+    public Event build() {
+        if (this.contact.equals(new Contact(new ContactName(DEFAULT_CONTACTNAME), new ContactPhone(DEFAULT_CONTACTNUM)))) {
+            return new Event(name, rate, address, tags);
+        } else {
+            return new Event(name, rate, address, tags, contact);
+        }
+    }
 }

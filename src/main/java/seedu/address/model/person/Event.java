@@ -8,6 +8,8 @@ import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.model.contact.Contact;
+import seedu.address.model.contact.ContactPhone;
+import seedu.address.model.contact.UniqueContactList;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -34,6 +36,15 @@ public class Event {
         this.rate = rate;
         this.address = address;
         this.tags.addAll(tags);
+    }
+
+    public Event(Name name, Rate rate, Address address, Set<Tag> tags, Contact contact) {
+        requireAllNonNull(name, rate, address, tags, contact);
+        this.name = name;
+        this.rate = rate;
+        this.address = address;
+        this.tags.addAll(tags);
+        this.contact = contact;
     }
 
     public Name getName() {
@@ -82,10 +93,18 @@ public class Event {
 
     /**
      * Returns nothing for linking a contact to an event.
-     * @param contact contact to be added in year book
+     * @param contact contact to be added in event book
      */
     public void linkContact(Contact contact) {
         this.contact = contact;
+    }
+
+    /**
+     * Returns nothing for linking a contact to an event using contact number.
+     * @param contactPhone contact number to be added in event book
+     */
+    public void linkContactNum(ContactPhone contactPhone) {
+        //Contact contactToAdd = contactList.get(UniqueContactList.contactMap.get(contactPhone.value));
     }
 
     /**

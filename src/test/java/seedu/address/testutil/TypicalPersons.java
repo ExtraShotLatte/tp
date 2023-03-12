@@ -28,6 +28,7 @@ public class TypicalPersons {
     public static final Event BENSON = new PersonBuilder().withName("Benson Meier")
             .withAddress("311, Clementi Ave 2, #02-25")
             .withRate("98765432")
+            .withContact("Meier", "91919292")
             .withTags("owesMoney", "friends").build();
     public static final Event CARL = new PersonBuilder().withName("Carl Kurz")
             .withRate("95352563")

@@ -11,6 +11,7 @@ import seedu.address.model.person.Event;
 import java.util.List;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 /**
  * Links an event to a contact in the event book.
@@ -58,6 +59,7 @@ public class LinkContactCommand extends Command{
         try{
             Contact contactToAdd = contactList.get(UniqueContactList.contactMap.get(addContact));
             model.linkContact(eventToAdd, contactToAdd);
+            model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         } catch (NullPointerException iobe) {
             throw new CommandException(Messages.MESSAGE_CONTACT_NOT_FOUND);
         }

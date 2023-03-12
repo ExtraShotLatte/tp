@@ -57,6 +57,7 @@ public class JsonAdaptedContact {
         if (!ContactPhone.isValidPhone(phone)) {
             throw new IllegalValueException(ContactPhone.MESSAGE_CONSTRAINTS);
         }
+
         final ContactPhone modelPhone = new ContactPhone(phone);
 
         return new Contact(modelName, modelPhone);
