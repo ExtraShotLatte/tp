@@ -62,6 +62,8 @@ This user guide will serve as a guide to help you get up to speed in no time!
 
 --------------------------------------------------------------------------------------------------------------------
 
+[//]: # (Perhaps we could explain the difference between event and contact here?)
+
 ## Features
 
 ### Add a Contact: `newcontact` <a id = "add-a-contact"></a>
@@ -109,7 +111,7 @@ Displays the rate tagged to an event.
 - Displays the agreed rate of the event at the specified `INDEX`.
 
   - The `INDEX` refers to the index number in the displayed events list.
-  - The `INDEX` must be a positive integer 1, 2, 3, …​
+  - The `INDEX` must be a positive integer 1, 2, 3, …
 
 **Example**:
 - `rate 2` returns the rate of `2nd event` in the event list.
