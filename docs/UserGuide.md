@@ -29,6 +29,7 @@ This user guide will serve as a guide to help you get up to speed in no time!
   * [View Event List](#list-all-events)
   * [Delete an Event](#delete-an-event)
   * [Edit an Event](#edit-an-event)
+    * [Link Contact to Event](#link-contact-to-event)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
