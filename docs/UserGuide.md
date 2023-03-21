@@ -94,9 +94,9 @@ Links client contact to an event.
 
 - Links contact using `PHONE` to the event at the specified `INDEX`.
 
-  - The `INDEX` refers to the index number in the displayed events list.
-  - The `INDEX` must be a positive integer 1, 2, 3, …
-  - The `PHONE` must be a valid phone number in the contact list.
+    - The `INDEX` refers to the index number in the displayed events list.
+    - The `INDEX` must be a positive integer 1, 2, 3, …
+    - The `PHONE` must be a valid phone number in the contact list.
 
 **Example**:
 - `linkcontact 2 91234567` links `2nd event` to the contact with phone `91234567` in the list.
