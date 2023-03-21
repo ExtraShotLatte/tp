@@ -126,7 +126,7 @@ Tags a rate to an event.
 - Adds a specified rate, `AMOUNT`, to an event at the specified `INDEX`.
 
   - The `INDEX` refers to the index number in the displayed events list.
-  - The `INDEX` must be a positive integer 1, 2, 3, …​
+  - The `INDEX` must be a positive integer 1, 2, 3, …
 
 **Example**:
 - `newrate 2 100` adds the rate of `100` to the `2nd event` in the event list. -->
