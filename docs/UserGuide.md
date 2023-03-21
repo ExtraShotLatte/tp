@@ -37,12 +37,12 @@ This user guide will serve as a guide to help you get up to speed in no time!
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
-   * Mac Users are encouraged to use to use the Azul build of OpenJDK11 version found
-    [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx).
-   * Do choose the `JDK FX` version and not any other version.
+    * Mac Users are encouraged to use to use the Azul build of OpenJDK11 version found
+      [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx).
+    * Do choose the `JDK FX` version and not any other version.
 
 1. Download the latest `Paidlancers.jar` from [here](https://github.com/AY2223S2-CS2103T-T11-3/tp/releases).
-   
+
 1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar Paidlancers.jar` command to run the application.<br>
