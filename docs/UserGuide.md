@@ -158,7 +158,7 @@ Unmarks a specified event in Paidlancers.
 
 Creates a new event
 
-**Format**: `newevent n/NAME p/rate a/ADDRESS ds/START_TIME de/END_TIME [t/TAG]…​`
+**Format**: `newevent n/NAME p/rate a/ADDRESS ds/START_TIME de/END_TIME [t/TAG]…`
 
 - Times must have the format `dd-MM-yyyy HH:mm`.
 
